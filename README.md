@@ -14,10 +14,10 @@ Star this repo if helpful! ⭐
 Avoid this common trap:
 
 # Wasteful — O(n log n) + copy!
-
+```python
 def is_sorted_bad(lst):
     return lst == sorted(lst)
-
+```
 Use these instead!
 The 5 Methods
 
