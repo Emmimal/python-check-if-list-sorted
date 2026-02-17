@@ -13,8 +13,8 @@ Star this repo if helpful! ⭐
 
 Avoid this common trap:
 
-```python
 # Wasteful — O(n log n) + copy!
+
 def is_sorted_bad(lst):
     return lst == sorted(lst)
 
