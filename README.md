@@ -22,33 +22,37 @@ Use these instead!
 The 5 Methods
 
 1. all() + zip() — Pythonic Favorite
-
+```python
 def is_sorted_zip(lst):
     return all(x <= y for x, y in zip(lst, lst[1:]))
-
+```
 # Strictly increasing (no duplicates)
+```python
 def is_strictly_sorted_zip(lst):
     return all(x < y for x, y in zip(lst, lst[1:]))
-
+```
 2. Classic For Loop — Clear & Explicit
+```python
 def is_sorted_loop(lst):
     for i in range(len(lst) - 1):
         if lst[i] > lst[i + 1]:
             return False
     return True
-
+```
 3. all() + range() — Index Access
+```python
 def is_sorted_range(lst):
     return all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
-
+```
 4. itertools.pairwise() — Modern (Python 3.10+)
-
+```python
 from itertools import pairwise
 
 def is_sorted_pairwise(lst):
     return all(x <= y for x, y in pairwise(lst))
-
+```
 5. operator.le — Custom Objects/Keys
+```python
 import operator
 
 def is_sorted_by(lst, key=lambda x: x):
@@ -62,7 +66,7 @@ Quick Tests (Run in Python)
 print(is_sorted_zip([1, 2, 3, 4]))      # True
 print(is_sorted_zip([1, 3, 2, 4]))      # False
 print(is_sorted_zip([5, 5, 5]))         # True (non-decreasing)
-
+```
 Tips
 
 Empty/single-element lists → Always True
